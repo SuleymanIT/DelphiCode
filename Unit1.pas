@@ -47,22 +47,24 @@ end;
    procedure MainThread;
 
 begin
-
+   { Если в потоке используем COM объекты то в начале и в конце
+     потока используем функцию CoInitialize(nil)
+              }
       CoInitialize(nil);
 Form1.XMLDocument1.Active := false;
 Form1.XMLDocument1.Active := True;
-
+     /// Выключаем режим автосохранения и включаем режим форматирования XML текста.
   Form1.XMLDocument1.Options := Form1.XMLDocument1.Options + [doNodeAutoIndent] - [doAutoSave];
 
   Form1.XMLDocument1.Version := '1.0';
   Form1.XMLDocument1.Encoding := 'utf-8';
-
+   ///Формируем XML документ главный узел документа
   Doc := Form1.XMLDocument1.AddChild('document');
 
   Node := Doc.AddChild('ПодсчетаСуммыКаждогоФайлаВПапке');
   Node.Attributes['ИмяПапки'] := TPath.GetFileNameWithoutExtension(sDir);
   Node.Attributes['СуммаВсехФайловВбайтах'] := inttostr(summofbytes);
-
+ /////Добавляем данные на узлы и на аттрибуты
 for i := 0 to Length(files) - 1 do
 begin
     if (extractfilename(files[i])='SummOfBytes.xml') then continue;
@@ -76,7 +78,7 @@ begin
 
   end;
 
-
+   //////Сохранить данные в XML документ
 form1.XMLDocument1.SaveToFile(sDir+'\SummOfBytes.xml');
   form1.ListBox1.Items.Add('Сумма в байтах всех файлов'+ '  ' + inttostr(summofbytes));
 
@@ -88,9 +90,12 @@ end;
  ///Процедура второго потока
 procedure SecondThread;
 begin
+ ///Процедура расчитывает общую сумму байтов всех файлов
 summofbytes:=0;
+
 for i := 0 to Length(files) - 1 do
 begin
+///В расчёт суммы всех байтов не включается созданный программой файл SummOfBytes.xml
 if (extractfilename(files[i])='SummOfBytes.xml') then continue;
 
 summofbytes:=summofbytes+FileSizeInByte(files[i]);

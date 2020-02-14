@@ -42,9 +42,9 @@
     <Transaction>2019/12/13 21:54:30.000.523,=C:\Users\Solomon1\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2019/12/13 22:00:01.000.328,=C:\Users\Solomon1\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2020/02/13 14:13:54.000.327,=C:\Users\Solomon1\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2020/02/13 14:41:58.000.880,C:\Users\Solomon1\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\System\DZ\ForSend\Project1.dproj</Transaction>
-    <Transaction>2020/02/13 14:41:58.000.094,C:\Users\Solomon1\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\System\DZ\ForSend\Unit1.dfm</Transaction>
-    <Transaction>2020/02/13 14:41:58.000.094,C:\Users\Solomon1\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\System\DZ\ForSend\Unit1.pas</Transaction>
+    <Transaction>2020/02/13 14:41:58.000.094,D:\System\DZ\ForSend\Unit1.dfm=C:\Users\Solomon1\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2020/02/13 14:41:58.000.880,D:\System\DZ\ForSend\Project1.dproj=C:\Users\Solomon1\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2020/02/13 14:41:58.000.094,D:\System\DZ\ForSend\Unit1.pas=C:\Users\Solomon1\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
   </Transactions>
 	<ActiveMobileDevice>
 		<NoProfile iOSSimulator="iPhone5"/>
